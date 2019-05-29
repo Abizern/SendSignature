@@ -4,7 +4,7 @@
 
 **Swift 5.0**
 
-Navigate and pass data from Last View Controller to First View Controller without segue.
+Pass a signature(UIView) from a ViewController to another ViewController.
 
 ##                                                            WATCH THE DEMO !
 
