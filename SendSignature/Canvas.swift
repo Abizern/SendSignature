@@ -103,9 +103,8 @@ extension Canvas {
         path.move(to: points[0])
         path.addCurve(to: points[3], controlPoint1: points[1], controlPoint2: points[2])
 
-        // Replace the points for the new segment
-        points[0] = points[3]
-        points[1] = points[4]
+        // Explicitly shift the points up for the new segment points for the new segment
+        points = [points[3], points[4], .zero, .zero, .zero]
         pointCounter = 1
         setNeedsDisplay()
     }
