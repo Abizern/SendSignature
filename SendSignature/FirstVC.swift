@@ -24,9 +24,7 @@ class FirstVC: UIViewController {
             let navigationController = navigationController,
             let secondVC = navigationController.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as? SecondVC
             else { return }
-        
-        let secondVC = navigationController?.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
-        
+            
         let signatureSaved = canvas.image
         
         secondVC.signature = signatureSaved ?? UIImage()

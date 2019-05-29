@@ -61,9 +61,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="9e4-q4-e11" id="xaa-j7-grv"/>
                         <outlet property="canvas" destination="cp9-OT-QTB" id="3LT-sA-RVl"/>
-                        <outlet property="signature" destination="cp9-OT-QTB" id="hKq-Sf-9Z2"/>
+                        <outlet property="imageView" destination="9e4-q4-e11" id="xaa-j7-grv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
