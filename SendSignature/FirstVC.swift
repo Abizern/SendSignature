@@ -20,6 +20,10 @@ class FirstVC: UIViewController {
     }
 
     @IBAction func nextBtn(_ sender: UIBarButtonItem) {
+        guard
+            let navigationController = navigationController,
+            let secondVC = navigationController.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as? SecondVC
+            else { return }
         
         let secondVC = navigationController?.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
         
@@ -27,11 +31,10 @@ class FirstVC: UIViewController {
         
         secondVC.signature = signatureSaved ?? UIImage()
         
-        navigationController?.pushViewController(secondVC, animated: true)
+        navigationController.pushViewController(secondVC, animated: true)
     }
     
     @IBAction func clearBtn(_ sender: UIButton) {
-        
         canvas.clear()
     }
 }
