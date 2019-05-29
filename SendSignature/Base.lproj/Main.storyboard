@@ -21,18 +21,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cp9-OT-QTB" customClass="Canvas" customModule="SendSignature" customModuleProvider="target">
                                 <rect key="frame" x="20" y="373" width="374" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-x0-0hJ">
-                                        <rect key="frame" x="124.5" y="64.5" width="125.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signature" translatesAutoresizingMaskIntoConstraints="NO" id="9e4-q4-e11">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MSc-x0-0hJ" firstAttribute="centerY" secondItem="cp9-OT-QTB" secondAttribute="centerY" id="C0T-J5-sWT"/>
-                                    <constraint firstItem="MSc-x0-0hJ" firstAttribute="centerX" secondItem="cp9-OT-QTB" secondAttribute="centerX" id="KWP-T4-7CO"/>
+                                    <constraint firstItem="9e4-q4-e11" firstAttribute="top" secondItem="cp9-OT-QTB" secondAttribute="top" id="Fq8-OQ-1NE"/>
+                                    <constraint firstAttribute="bottom" secondItem="9e4-q4-e11" secondAttribute="bottom" id="U7V-0f-914"/>
                                     <constraint firstAttribute="height" constant="150" id="ZEh-Zf-gR3"/>
+                                    <constraint firstItem="9e4-q4-e11" firstAttribute="leading" secondItem="cp9-OT-QTB" secondAttribute="leading" id="egJ-2X-YKJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9e4-q4-e11" secondAttribute="trailing" id="pIx-AM-4g6"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPz-kq-0SR">
@@ -62,6 +61,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="9e4-q4-e11" id="xaa-j7-grv"/>
                         <outlet property="signature" destination="cp9-OT-QTB" id="hKq-Sf-9Z2"/>
                     </connections>
                 </viewController>
@@ -120,4 +120,7 @@
             <point key="canvasLocation" x="-39.130434782608695" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="signature" width="300" height="160"/>
+    </resources>
 </document>

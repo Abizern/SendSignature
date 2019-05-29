@@ -11,10 +11,12 @@ import UIKit
 class FirstVC: UIViewController {
 
     @IBOutlet weak var signature: Canvas!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView.image = UIImage(#imageLiteral(resourceName: "signature"))
     }
 
     @IBAction func nextBtn(_ sender: UIBarButtonItem) {
