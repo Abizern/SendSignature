@@ -7,40 +7,26 @@
 
 import UIKit
 
-protocol CanvasDelegate {
-    func didAddLine()
-}
 
 /// A class which allow the user to draw inside a UIView which inherit this class.
 class Canvas: UIView {
+
+    private struct Line {
+        var points: [CGPoint]
+    }
     
-    fileprivate var strokeColor = UIColor.black
-    fileprivate var strokeWidth: Float = 1
-    var delegate: CanvasDelegate?
-    
+    private var strokeColor = UIColor.black.cgColor
+    private var strokeWidth = CGFloat(1)
+
     // public function
-    func setStrokeWidth(width: Float) {
-        self.strokeWidth = width
-    }
-    
-    func setStrokeColor(color: UIColor) {
-        self.strokeColor = color
-    }
-    
-    func undo() {
-        _ = lines.popLast()
-        setNeedsDisplay()
-    }
-    
     func clear() {
         lines.removeAll()
         setNeedsDisplay()
     }
     
-    fileprivate var lines = [Line]() {
+    private var lines = [Line]() {
         didSet {
             guard !lines.isEmpty else { return }
-            delegate?.didAddLine()
         }
     }
     
@@ -48,11 +34,11 @@ class Canvas: UIView {
         super.draw(rect)
         
         guard let context = UIGraphicsGetCurrentContext() else { return }
-        
+        context.setStrokeColor(strokeColor)
+        context.setLineWidth(strokeWidth)
+        context.setLineCap(.round)
+
         lines.forEach { (line) in
-            context.setStrokeColor(line.color.cgColor)
-            context.setLineWidth(CGFloat(line.strokeWidth))
-            context.setLineCap(.round)
             for (i, p) in line.points.enumerated() {
                 if i == 0 {
                     context.move(to: p)
@@ -65,7 +51,7 @@ class Canvas: UIView {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
+        lines.append(Line.init(points: []))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -75,10 +61,4 @@ class Canvas: UIView {
         lines.append(lastLine)
         setNeedsDisplay()
     }
-}
-
-struct Line {
-    let strokeWidth: Float
-    let color: UIColor
-    var points: [CGPoint]
 }
