@@ -57,12 +57,14 @@ class Canvas: UIView {
     private func cacheImage() {
         let renderer = UIGraphicsImageRenderer(bounds: bounds)
         image = renderer.image(actions: { (context) in
-            if image == nil {
-                // Nothing cached yet, fill the background
-                let backgroundRect = UIBezierPath(rect: bounds)
-                backgroundColor?.setFill()
-                backgroundRect.fill()
-            }
+            // Since we are not drawing a background color I've commented this out
+            // I've left the code in case you want to use it in the future
+//            if image == nil {
+//                // Nothing cached yet, fill the background
+//                let backgroundRect = UIBezierPath(rect: bounds)
+//                backgroundColor?.setFill()
+//                backgroundRect.fill()
+//            }
 
             image?.draw(at: .zero)
             strokeColor.setStroke()
