@@ -60,6 +60,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="canvas" destination="cp9-OT-QTB" id="3LT-sA-RVl"/>
+                        <outlet property="clearBtn" destination="aPz-kq-0SR" id="Pwn-cr-Zfv"/>
                         <outlet property="imageView" destination="9e4-q4-e11" id="xaa-j7-grv"/>
                     </connections>
                 </viewController>

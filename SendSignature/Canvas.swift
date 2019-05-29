@@ -83,6 +83,7 @@ extension Canvas {
         pointCounter = 0
 
         points[pointCounter] = point
+        isDrawingHandler?(true)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

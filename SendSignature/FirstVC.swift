@@ -9,10 +9,18 @@
 import UIKit
 
 class FirstVC: UIViewController {
-
-    @IBOutlet private var canvas: Canvas!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private var canvas: Canvas! {
+        didSet {
+            canvas.isDrawingHandler = { [weak self] isDrawing in
+                self?.clearBtn.isEnabled = !isDrawing
+            }
+        }
+    }
     
+    @IBOutlet weak var imageView: UIImageView!
+
+    @IBOutlet var clearBtn: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
