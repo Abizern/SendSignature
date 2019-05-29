@@ -10,7 +10,7 @@ import UIKit
 
 class FirstVC: UIViewController {
 
-    @IBOutlet weak var signature: Canvas!
+    @IBOutlet private var signature: Canvas!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {

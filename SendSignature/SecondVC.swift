@@ -10,7 +10,7 @@ import UIKit
 
 class SecondVC: UIViewController {
 
-    @IBOutlet weak var receivedSignature: UIImageView!
+    @IBOutlet private var receivedSignature: UIImageView!
     
     var signature = UIImage()
     
