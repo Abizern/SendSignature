@@ -49,6 +49,18 @@ class Canvas: UIView {
             context.strokePath()
         }
     }
+
+    /// Returns the image drawn into the canvas
+    var image: UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
+        defer { UIGraphicsEndImageContext() }
+        if let context = UIGraphicsGetCurrentContext() {
+            layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        return nil
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lines.append(Line.init(points: []))

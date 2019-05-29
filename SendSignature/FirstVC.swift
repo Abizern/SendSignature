@@ -10,7 +10,7 @@ import UIKit
 
 class FirstVC: UIViewController {
 
-    @IBOutlet private var signature: Canvas!
+    @IBOutlet private var canvas: Canvas!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class FirstVC: UIViewController {
         
         let secondVC = navigationController?.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
         
-        let signatureSaved = convertViewToImage(with: signature)
+        let signatureSaved = canvas.image
         
         secondVC.signature = signatureSaved ?? UIImage()
         
@@ -32,18 +32,6 @@ class FirstVC: UIViewController {
     
     @IBAction func clearBtn(_ sender: UIButton) {
         
-        signature.clear()
-    }
-    
-    
-    func convertViewToImage(with view: UIView) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
-        defer { UIGraphicsEndImageContext() }
-        if let context = UIGraphicsGetCurrentContext() {
-            view.layer.render(in: context)
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            return image
-        }
-        return nil
+        canvas.clear()
     }
 }
