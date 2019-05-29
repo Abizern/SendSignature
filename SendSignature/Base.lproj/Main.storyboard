@@ -35,13 +35,22 @@
                                     <constraint firstAttribute="height" constant="150" id="ZEh-Zf-gR3"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPz-kq-0SR">
+                                <rect key="frame" x="189" y="531" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IdY-RC-OQb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cp9-OT-QTB" secondAttribute="trailing" constant="20" id="0kf-UK-18Z"/>
                             <constraint firstItem="cp9-OT-QTB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Cyb-fo-VXV"/>
+                            <constraint firstItem="aPz-kq-0SR" firstAttribute="top" secondItem="cp9-OT-QTB" secondAttribute="bottom" constant="8" id="byL-1m-Zgb"/>
                             <constraint firstItem="cp9-OT-QTB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cDC-9Y-1Rq"/>
                             <constraint firstItem="cp9-OT-QTB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gxx-RM-jGd"/>
+                            <constraint firstItem="aPz-kq-0SR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pcB-cg-gsA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -68,35 +77,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfo-Kv-XEU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llt-1k-Wbu">
                                 <rect key="frame" x="20" y="373" width="374" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Received signature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pe-Uh-gbf">
-                                        <rect key="frame" x="114" y="64.5" width="146" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="JL1-zz-KDT"/>
-                                    <constraint firstItem="7Pe-Uh-gbf" firstAttribute="centerY" secondItem="jfo-Kv-XEU" secondAttribute="centerY" id="jMs-Ko-e5F"/>
-                                    <constraint firstItem="7Pe-Uh-gbf" firstAttribute="centerX" secondItem="jfo-Kv-XEU" secondAttribute="centerX" id="orZ-qB-X9Z"/>
+                                    <constraint firstAttribute="height" constant="150" id="V0e-zz-HZi"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jfo-Kv-XEU" firstAttribute="centerY" secondItem="nmH-oH-ee7" secondAttribute="centerY" id="fy5-VN-iT5"/>
-                            <constraint firstItem="W6H-6X-C1N" firstAttribute="trailing" secondItem="jfo-Kv-XEU" secondAttribute="trailing" constant="20" id="kmJ-Wr-Z6h"/>
-                            <constraint firstItem="jfo-Kv-XEU" firstAttribute="centerX" secondItem="nmH-oH-ee7" secondAttribute="centerX" id="vy2-pt-81c"/>
-                            <constraint firstItem="jfo-Kv-XEU" firstAttribute="leading" secondItem="W6H-6X-C1N" secondAttribute="leading" constant="20" id="zMG-MQ-VwO"/>
+                            <constraint firstItem="llt-1k-Wbu" firstAttribute="centerY" secondItem="nmH-oH-ee7" secondAttribute="centerY" id="Rlt-Dk-YbO"/>
+                            <constraint firstItem="W6H-6X-C1N" firstAttribute="trailing" secondItem="llt-1k-Wbu" secondAttribute="trailing" constant="20" id="UHK-2C-EIo"/>
+                            <constraint firstItem="llt-1k-Wbu" firstAttribute="centerX" secondItem="nmH-oH-ee7" secondAttribute="centerX" id="Xz3-FZ-ylO"/>
+                            <constraint firstItem="llt-1k-Wbu" firstAttribute="leading" secondItem="W6H-6X-C1N" secondAttribute="leading" constant="20" id="mWw-j6-CX2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W6H-6X-C1N"/>
                     </view>
                     <connections>
-                        <outlet property="receivedSignature" destination="jfo-Kv-XEU" id="LmX-Yq-O6f"/>
+                        <outlet property="receivedSignature" destination="llt-1k-Wbu" id="UWZ-Ng-u4V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ds8-9d-m0e" userLabel="First Responder" sceneMemberID="firstResponder"/>

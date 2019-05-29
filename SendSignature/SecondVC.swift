@@ -10,13 +10,13 @@ import UIKit
 
 class SecondVC: UIViewController {
 
-    @IBOutlet weak var receivedSignature: UIView!
+    @IBOutlet weak var receivedSignature: UIImageView!
     
-    var signature = UIView()
+    var signature = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        receivedSignature = signature
+        receivedSignature.image = signature
     }
 }
